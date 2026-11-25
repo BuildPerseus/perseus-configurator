@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pricing · Perseus Lab</title>
+<meta name="description" content="What a Perseus Lab home server costs: DIY, you buy we set up, or done for you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="Perseus Lab home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#8fd0a8" stroke-width="1.5"><path d="M7 25 13 17 19 19 25 7M13 17 11 8"/></g><g fill="#e6eee8"><circle cx="7" cy="25" r="2"/><circle cx="13" cy="17" r="2.4"/><circle cx="19" cy="19" r="1.8"/><circle cx="25" cy="7" r="2.2"/><circle cx="11" cy="8" r="1.6"/></g></svg>
+      Perseus Lab
+    </a>
+    <nav aria-label="Main">
+      <a href="../what-it-does/index.html">What it does</a>
+      <a href="../pricing/index.html">Pricing</a>
+      <a href="../how-it-works/index.html">How it works</a>
+      <a href="../quote/index.html">Get a quote</a>
+    </nav>
+    <a class="btn primary" href="../build/index.html">Build yours</a>
+  </div>
+</header>
+
+<main>
+<section class="pagehead"><div class="wrap">
+  <h1>Pricing</h1>
+  <p class="lede">Every build is custom. These are honest starting points; your firm price comes after a 20-minute call.</p>
+</div></section>
+
+<section class="band" style="padding-top:24px">
+  <div class="wrap">
+    <div class="grid g3">
+      <div class="card">
+        <span class="tag">Do it yourself</span>
+        <p class="price">Free</p>
+        <ul class="ticks"><li>The guided builder</li><li>Your parts list with store links</li><li>A parts total before tax and shipping</li></ul>
+      </div>
+      <div class="card">
+        <span class="tag">You buy, we set it up</span>
+        <p class="price"><span class="num" data-cfg>$500–750</span> <span class="plus">+ parts</span></p>
+        <ul class="ticks"><li>Setup only: you buy the parts from our list</li><li>Configured remotely, or in one visit of up to 3 hours</li><li>30 days of support</li></ul>
+      </div>
+      <div class="card" style="border-color:var(--green)">
+        <span class="tag">Done for you</span>
+        <p class="price">From <span class="num" data-dfy-from>$1,822</span></p>
+        <ul class="ticks"><li>We plan it and source the parts</li><li>Installed with a licensed partner</li><li>A tested backup restore and a written handover guide</li><li>Your first 3 months of Care included</li></ul>
+      </div>
+    </div>
+    <p class="small" style="margin-top:14px">Prebuilt and shipped: coming later.</p>
+  </div>
+</section>
+
+<section class="band alt">
+  <div class="wrap">
+    <div class="carhead">
+      <div class="head" style="margin:0"><h2>Starting points</h2><p class="lede">Where most people start. The builder tailors it to what you actually want.</p></div>
+      <div class="arrows"><button class="arrow" type="button" data-prev aria-label="Previous">←</button><button class="arrow" type="button" data-next aria-label="Next">→</button></div>
+    </div>
+    <div class="car wide" id="presets" data-car tabindex="0" aria-label="Starting builds, swipe or use the arrows"></div>
+    <p class="small" style="margin-top:14px" data-price-note></p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap" style="max-width:860px">
+    <div class="head"><h2>How done-for-you pricing works</h2></div>
+    <ul class="ticks" style="font-size:16px;gap:12px">
+      <li>Parts plus a 15% sourcing fee, quoted plus sales tax.</li>
+      <li>Setup from $1,500, or from $3,500 with a large AI box.</li>
+      <li>Deposit: the parts plus half the setup. The balance is due at handover.</li>
+      <li>Your deposit is 100% refundable until parts are ordered. After that, setup is refunded and parts go back under each store’s return policy, minus any restocking fees.</li>
+      <li>No travel fee across the Phoenix metro. Elsewhere in Arizona it’s $150 under a 2-hour drive and $300 beyond. Out of state is travel at cost plus $500 per travel day.</li>
+      <li>Quotes are good for 7 days, because parts prices move.</li>
+      <li>Your first 3 months of Care are included. After that, Care starts at $150 a month and is optional.</li>
+    </ul>
+    <div class="btns" style="margin-top:28px"><a class="btn primary" href="../build/index.html">Build yours</a><a class="btn ghost" href="../quote/index.html">Get a quote</a></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <p>© 2026 Perseus Lab · Mesa, Arizona</p>
+      <nav class="foot-links" aria-label="Footer"><a href="../build/index.html">Builder</a><a href="../what-it-does/index.html">What it does</a><a href="../pricing/index.html">Pricing</a><a href="../how-it-works/index.html">How it works</a><a href="../quote/index.html">Get a quote</a></nav>
+    </div>
+    <p style="max-width:60ch">Prices are estimates before tax and shipping, re-checked within 7 days of any quote. Store links are plain links today. If any become affiliate links, we’ll say so right next to them.</p>
+  </div>
+</footer>
+
+<script src="../assets/catalog.js"></script>
+<script src="../assets/site.js"></script>
+<script>
+{
+  const P = window.PERSEUS, m = P.money, el = document.getElementById('presets');
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  if (el) el.innerHTML = Object.entries(P.presets).map(([id, p]) => {
+    const t = P.totals(p.items);
+    return `<article class="pc"><span class="who">${esc(p.who)}</span><h4>${esc(p.name)}</h4><p class="blurb">${esc(p.blurb)}</p>
+      <div class="nums"><div><span>Parts if you DIY</span><b>${p.siteVisit ? 'Varies' : 'from ' + m(t.low)}</b></div><div><span>Done for you</span><b>${p.siteVisit ? 'Site visit' : 'from ' + m(t.dfy)}</b></div></div>
+      <a class="btn ghost" href="../build/index.html#preset-${id}">Start from this build</a></article>`;
+  }).join('');
+  for (const n of document.querySelectorAll('[data-dfy-from]')) n.textContent = m(P.totals(P.presets.cheapest.items).dfy);
+  for (const n of document.querySelectorAll('[data-cfg]')) n.textContent = m(P.rules.configureLow) + '–' + m(P.rules.configureHigh);
+  for (const n of document.querySelectorAll('[data-price-note]')) n.textContent = `Parts prices from our ${P.rules.priceDate} price check, before tax and shipping. Every build is custom; your firm price comes after a 20-minute call.`;
+}
+</script>
+</body>
+</html>

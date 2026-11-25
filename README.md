@@ -7,12 +7,17 @@ Plain HTML, CSS and JavaScript with no build step. Hosted on Cloudflare Pages at
 
 | Path | What it is |
 |---|---|
-| `index.html` | Home page |
+| `index.html` | Home page (short) |
+| `what-it-does/index.html` | Every use case and benefit, by category |
+| `pricing/index.html` | Three ways to buy, starting points, how pricing works |
+| `how-it-works/index.html` | Steps, install standards, FAQ |
+| `quote/index.html` | Quote request form |
 | `build/index.html` | The configurator at `/build` |
 | `assets/catalog.js` | **Every part and price.** The only file to edit when prices change |
 | `assets/build.js` | Configurator logic: needs → recommended build, swaps, warnings, totals |
 | `assets/quote.js` | Quote form handler (not connected yet) |
 | `assets/site.css` | Shared styles |
+| `assets/site.js` | Sideways card rows (arrows, swipe, keys) |
 | `_headers` | Security headers for Cloudflare Pages |
 
 ## Updating prices

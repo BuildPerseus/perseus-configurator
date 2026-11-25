@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get a quote · Perseus Lab</title>
+<meta name="description" content="Request a quote for a Perseus Lab home server. We’ll set up a 20-minute call.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="Perseus Lab home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#8fd0a8" stroke-width="1.5"><path d="M7 25 13 17 19 19 25 7M13 17 11 8"/></g><g fill="#e6eee8"><circle cx="7" cy="25" r="2"/><circle cx="13" cy="17" r="2.4"/><circle cx="19" cy="19" r="1.8"/><circle cx="25" cy="7" r="2.2"/><circle cx="11" cy="8" r="1.6"/></g></svg>
+      Perseus Lab
+    </a>
+    <nav aria-label="Main">
+      <a href="../what-it-does/index.html">What it does</a>
+      <a href="../pricing/index.html">Pricing</a>
+      <a href="../how-it-works/index.html">How it works</a>
+      <a href="../quote/index.html">Get a quote</a>
+    </nav>
+    <a class="btn primary" href="../build/index.html">Build yours</a>
+  </div>
+</header>
+
+<main>
+<section class="pagehead"><div class="wrap" style="max-width:760px">
+  <h1>Get a quote</h1>
+  <p class="lede">Tell us a little and we’ll set up a 20-minute call. No pressure, no payment.</p>
+  <p class="small">Want a price range first? <a href="../build/index.html">Try the builder</a>. It takes two minutes.</p>
+</div></section>
+<section class="band" style="padding-top:16px">
+  <div class="wrap" style="max-width:760px">
+    <form class="form quote" novalidate>
+      <label>Name<input name="name" autocomplete="name" required></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required></label>
+      <label>Phone (optional)<input name="phone" type="tel" autocomplete="tel"></label>
+      <label>City<input name="city" autocomplete="address-level2"></label>
+      <label>What should it do?
+        <select name="need">
+          <option>Smart home and leak alerts</option><option>Photos, files and backups</option><option>Movies and music</option><option>Cameras</option><option>Wi-Fi and ad-blocking</option><option>Private AI</option><option>Whole home</option><option>Business (2027 list)</option><option>Not sure yet</option>
+        </select>
+      </label>
+      <label>How do you want to buy?
+        <select name="path"><option>Done for you</option><option>I buy, you set it up</option><option>Just the parts list</option></select>
+      </label>
+      <label class="full">Anything else?<textarea name="notes"></textarea></label>
+      <div class="full btns"><button class="btn primary" type="submit">Request my quote</button></div>
+      <p class="note full" role="status" hidden></p>
+    </form>
+    <p class="small" style="margin-top:18px">No travel fee across the Phoenix metro. Elsewhere in Arizona and out of state, travel is added to your quote.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <p>© 2026 Perseus Lab · Mesa, Arizona</p>
+      <nav class="foot-links" aria-label="Footer"><a href="../build/index.html">Builder</a><a href="../what-it-does/index.html">What it does</a><a href="../pricing/index.html">Pricing</a><a href="../how-it-works/index.html">How it works</a><a href="../quote/index.html">Get a quote</a></nav>
+    </div>
+    <p style="max-width:60ch">Prices are estimates before tax and shipping, re-checked within 7 days of any quote. Store links are plain links today. If any become affiliate links, we’ll say so right next to them.</p>
+  </div>
+</footer>
+
+<script src="../assets/catalog.js"></script>
+<script src="../assets/site.js"></script>
+<script src="../assets/quote.js"></script>
+</body>
+</html>

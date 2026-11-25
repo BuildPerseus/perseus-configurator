@@ -61,28 +61,28 @@ window.PERSEUS = (function () {
   const presets = {
     cheapest: {
       name: 'Cheapest that works', who: 'Starting small or smart home only',
-      blurb: 'A hub, a radio, leak alerts and smart lights. No storage, no AI, nothing you won’t use.',
+      blurb: 'Leak alerts and smart lights done right, without paying for anything you won’t use.',
       items: [['ha-green', 1], ['zbt2', 1], ['leak', 3], ['bulb', 4], ['motion', 1]]
     },
     starter: {
       name: 'Starter lab', who: 'Families cutting subscriptions',
-      blurb: 'Smart home, a proper network, and mirrored storage for the family’s photos and files.',
+      blurb: 'A smarter home, strong Wi-Fi everywhere, and the family’s photos kept safe at home.',
       items: starterCore.concat(starterDevices)
     },
     storage: {
       name: 'Starter lab + storage', who: 'Home offices and creators',
-      blurb: 'The Starter lab with bigger drives for client files, footage and backups.',
+      blurb: 'Everything in the Starter lab, with room for client files, footage and backups.',
       items: starterCore.map(([id, q]) => id === 'hdd4' ? ['hdd8', q] : [id, q]).concat(starterDevices)
     },
     privateai: {
       name: 'Private AI', who: 'Privacy-minded professionals',
-      blurb: 'Everything in the Starter lab plus a 128 GB AI box, more storage and a bigger battery backup.',
+      blurb: 'A private assistant and local AI that keep your data in your house, plus everything in the Starter lab.',
       specsOpen: true,
       items: [['n150', 1], ['zbt2', 1], ['r395', 1], ['ucg-ultra', 1], ['u7pro', 2], ['lite8poe', 1], ['dxp2800', 1], ['hdd8', 4], ['cp1500', 1], ['firehd10', 1]].concat(starterDevices)
     },
     wholehome: {
       name: 'Private AI + whole home', who: 'Larger homes',
-      blurb: 'Starts from the Private AI build. Wiring, extra rooms and outdoor areas are quoted after a site visit.',
+      blurb: 'Every room, the yard and the garage, with private AI. Priced after a site visit.',
       specsOpen: true, siteVisit: true,
       items: [['n150', 1], ['zbt2', 1], ['r395', 1], ['ucg-ultra', 1], ['u7pro', 2], ['lite8poe', 1], ['dxp2800', 1], ['hdd8', 4], ['cp1500', 1], ['firehd10', 1]].concat(starterDevices)
     }
