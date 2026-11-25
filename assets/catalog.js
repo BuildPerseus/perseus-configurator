@@ -111,5 +111,25 @@ window.PERSEUS = (function () {
 
   const money = n => '$' + Math.round(n).toLocaleString('en-US');
 
-  return { parts, groupNames, presets, rules, totals, money };
+  // Plain-English summary of a build, for preset cards and the builder reveal
+  const deviceWords = { leak: 'leak sensors', bulb: 'smart bulbs', motion: 'motion sensors', fp300: 'presence sensor', ecobee: 'thermostat',
+    reolink: 'camera', havoice: 'voice assistant', roborock: 'robot vacuum', soil: 'soil sensor', valve: 'garden valve' };
+  function highlights(items) {
+    const has = g => items.filter(([id, q]) => parts[id] && parts[id].group === g && q > 0);
+    const out = [];
+    const ai = has('ai'); if (ai.length) out.push('Private AI box: ' + parts[ai[0][0]].name);
+    const hub = has('hub'); if (hub.length) out.push('Brain: ' + parts[hub[0][0]].name);
+    if (has('gateway').length) out.push('Whole-home router' + (has('wifi').length ? ' and Wi-Fi 7' : ''));
+    const dr = has('drive');
+    if (has('nas').length && dr.length) { const n = dr.reduce((a, [, q]) => a + q, 0), tb = parts[dr[0][0]].name.match(/\d+/)[0]; out.push(`${n} × ${tb} TB drives, mirrored`); }
+    if (has('ups').length) out.push('Battery backup');
+    const dev = has('device');
+    if (dev.length) {
+      const n = dev.reduce((a, [, q]) => a + q, 0);
+      out.push(`${n} devices: ` + dev.slice(0, 4).map(([id]) => deviceWords[id] || parts[id].name).join(', ') + (dev.length > 4 ? ' and more' : ''));
+    }
+    return out;
+  }
+
+  return { parts, groupNames, presets, rules, totals, money, highlights };
 })();

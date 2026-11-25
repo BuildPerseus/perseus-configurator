@@ -10,6 +10,8 @@
   --warn:#e2b85c;--bad:#ee8a7f;
   --r:12px;--f-head:"Space Grotesk",system-ui,sans-serif;--f-body:"Inter",system-ui,sans-serif}
 *{box-sizing:border-box;min-width:0}
+[hidden]{display:none!important}
+html{background:var(--bg)}
 html{scroll-padding-top:80px;scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);overflow-x:clip}

@@ -24,7 +24,22 @@
 .std{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr));padding:0;margin:0}
 .std li{list-style:none;display:flex;gap:12px;align-items:flex-start;color:var(--muted)}
 .std svg{flex:none;width:20px;height:20px;margin-top:3px;color:var(--glow)}
-.own{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,5vw,64px);align-items:start}
+.plus{font-family:var(--f-body);font-size:16px;color:var(--muted)}
+.carhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:56px 0 16px}
+.arrow{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:18px;cursor:pointer}
+.arrow:hover{border-color:var(--green-hi)}
+.car{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;scrollbar-width:thin}
+.car>.pc{flex:0 0 min(340px,86%);scroll-snap-align:start}
+.pc{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:14px}
+.pc .who{font-size:14px;color:var(--green-ink)}
+.pc h4{font-family:var(--f-head);font-size:24px;font-weight:600;margin:0;line-height:1.15}
+.pc .blurb{color:var(--muted);font-size:15px}
+.pc .nums{display:grid;grid-template-columns:1fr 1fr;gap:10px;border-block:1px solid var(--line);padding:14px 0}
+.pc .nums span{display:block;font-size:13px;color:var(--dim)}
+.pc .nums b{font-family:var(--f-head);font-size:20px;font-weight:600;white-space:nowrap}
+.pc ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:14.5px;color:var(--muted)}
+.pc li{padding-left:18px;position:relative}.pc li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;border-radius:50%;background:var(--glow)}
+.pc .btn{margin-top:auto}
 details{border-bottom:1px solid var(--line);padding:18px 0}
 details summary{cursor:pointer;font-family:var(--f-head);font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px;min-height:28px}
 details summary::after{content:"+";color:var(--green-ink);font-size:22px;line-height:1}
@@ -32,7 +47,7 @@ details[open] summary::after{content:"–"}
 details p{color:var(--muted);margin-top:10px;max-width:70ch}
 .biz{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 @media (max-width:1000px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:760px){.hero .wrap,.own{grid-template-columns:minmax(0,1fr)}.std{grid-template-columns:minmax(0,1fr)}.steps{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:760px){.hero .wrap{grid-template-columns:minmax(0,1fr)}.std{grid-template-columns:minmax(0,1fr)}.steps{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
@@ -63,7 +78,7 @@ details p{color:var(--muted);margin-top:10px;max-width:70ch}
         <a class="btn primary" href="build/index.html">Build yours in 2 minutes</a>
         <a class="btn ghost" href="#quote">Get a quote</a>
       </div>
-      <p class="small">No travel fee across the Phoenix metro. The rest of Arizona and out of state available.</p>
+      <p class="small">You own every part. Ongoing Care is optional after your first 3 months.</p>
     </div>
 
     <svg class="house" viewBox="0 0 600 440" role="img" aria-label="A house cut open at night. A small server in the hall closet connects to lights, photos, a leak sensor and a voice assistant.">
@@ -145,6 +160,26 @@ details p{color:var(--muted);margin-top:10px;max-width:70ch}
         <h3 style="color:var(--ink)">Private AI in your house</h3>
         <p>A calendar-aware assistant and local AI models on your own box. They’re useful, but they don’t match Claude or ChatGPT, so you can still send big jobs there when you choose.</p>
       </a>
+      <a class="card" href="build/index.html#need-media" style="text-decoration:none">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="5" width="20" height="13" rx="2"/><path d="m10 9 5 2.5-5 2.5z"/><path d="M8 21h8"/></svg>
+        <h3 style="color:var(--ink)">Your own movie and music library</h3>
+        <p>The movies, shows and music you own, streaming to every TV and phone in the house.</p>
+      </a>
+      <a class="card" href="build/index.html#need-cameras" style="text-decoration:none">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h4l2-3h6l2 3h4v11H3z"/><circle cx="12" cy="13" r="3.5"/></svg>
+        <h3 style="color:var(--ink)">Cameras that stay home</h3>
+        <p>Footage records to storage in your house, not a company’s cloud, and no monthly camera fees.</p>
+      </a>
+      <a class="card" href="build/index.html#need-network" style="text-decoration:none">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1"/></svg>
+        <h3 style="color:var(--ink)">Strong Wi-Fi in every room</h3>
+        <p>A proper router and ceiling access points where you actually use Wi-Fi, from the garage to the patio.</p>
+      </a>
+      <a class="card" href="build/index.html#need-adblock" style="text-decoration:none">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6z"/><path d="m9 9 6 6M15 9l-6 6"/></svg>
+        <h3 style="color:var(--ink)">Fewer ads on every device</h3>
+        <p>Blocks most ads and trackers across the whole house, phones and smart TVs included, with nothing to install on each one.</p>
+      </a>
     </div>
   </div>
 </section>
@@ -163,8 +198,8 @@ details p{color:var(--muted);margin-top:10px;max-width:70ch}
       </div>
       <div class="card">
         <span class="tag">You buy, we set it up</span>
-        <p class="price"><span class="num" id="cfg-price">$500–750</span></p>
-        <p>Buy the parts from our list. We configure it remotely or in one visit of up to 3 hours, then support you for 30 days.</p>
+        <p class="price"><span class="num" id="cfg-price">$500–750</span> <span class="plus">+ parts</span></p>
+        <p>Setup only. You buy the parts from our list. We configure it remotely or in one visit of up to 3 hours, then support you for 30 days.</p>
       </div>
       <div class="card" style="border-color:var(--green)">
         <span class="tag">Done for you</span>
@@ -174,21 +209,26 @@ details p{color:var(--muted);margin-top:10px;max-width:70ch}
     </div>
     <p class="small" style="margin-top:14px">Prebuilt and shipped: coming later.</p>
 
-    <h3 style="margin:48px 0 16px">Starting points</h3>
-    <table class="stack" id="presets">
-      <thead><tr><th>Who it’s for</th><th>Build</th><th class="r">Parts if you DIY</th><th class="r">Done for you</th><th></th></tr></thead>
-      <tbody></tbody>
-    </table>
+    <div class="carhead">
+      <h3>Starting points</h3>
+      <div class="btns"><button class="arrow" type="button" id="prev" aria-label="Previous build">←</button><button class="arrow" type="button" id="next" aria-label="Next build">→</button></div>
+    </div>
+    <div class="car" id="presets" tabindex="0" aria-label="Starting builds, swipe or use the arrows"></div>
     <p class="small" style="margin-top:14px" id="price-note"></p>
   </div>
 </section>
 
-<section class="band" id="standards">
-  <div class="wrap own">
-    <div class="head" style="margin:0">
-      <h2>Own it. Don’t expect it to pay for itself.</h2>
-      <p class="lede">A home server costs more than the subscriptions it replaces. People buy one to own their photos and data, keep their home private, and have things just work. That’s what we sell.</p>
-    </div>
+<section class="band" id="how">
+  <div class="wrap">
+    <div class="head"><h2>How it works</h2></div>
+    <ol class="steps" style="padding:0;margin:0">
+      <li><h3>Build it</h3><p>Two minutes in the builder. You get a parts list and a price range.</p></li>
+      <li><h3>20-minute call</h3><p>We confirm what you need and send a firm quote. Whole-home work gets a site visit.</p></li>
+      <li><h3>Deposit</h3><p>Parts plus half the setup. Fully refundable until parts are ordered.</p></li>
+      <li><h3>Install day</h3><p>We set it up, test a backup restore with you and walk you through the guide.</p></li>
+      <li><h3>Care</h3><p>3 months included. After that, Care plans start at $150 a month, or run it yourself.</p></li>
+    </ol>
+    <h3 style="margin:48px 0 18px">How we install</h3>
     <ul class="std">
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg>Quiet mini PCs, never loud rack gear</li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg>Mirrored NAS drives and 3-2-1 backups, with a restore tested at handover</li>
@@ -202,20 +242,7 @@ details p{color:var(--muted);margin-top:10px;max-width:70ch}
   </div>
 </section>
 
-<section class="band alt" id="how">
-  <div class="wrap">
-    <div class="head"><h2>How it works</h2></div>
-    <ol class="steps" style="padding:0;margin:0">
-      <li><h3>Build it</h3><p>Two minutes in the builder. You get a parts list and a price range.</p></li>
-      <li><h3>20-minute call</h3><p>We confirm what you need and send a firm quote. Whole-home work gets a site visit.</p></li>
-      <li><h3>Deposit</h3><p>Parts plus half the setup. Fully refundable until parts are ordered.</p></li>
-      <li><h3>Install day</h3><p>We set it up, test a backup restore with you and walk you through the guide.</p></li>
-      <li><h3>Care</h3><p>3 months included. After that, Care plans start at $150 a month, or run it yourself.</p></li>
-    </ol>
-  </div>
-</section>
-
-<section class="band" id="faq">
+<section class="band alt" id="faq">
   <div class="wrap" style="max-width:860px">
     <div class="head"><h2>Questions</h2></div>
     <details><summary>Do I need to be technical?</summary><p>No. You use it through apps and a wall dashboard. We handle the setup, and Care covers updates and fixes.</p></details>
@@ -228,7 +255,7 @@ details p{color:var(--muted);margin-top:10px;max-width:70ch}
   </div>
 </section>
 
-<section class="band alt">
+<section class="band">
   <div class="wrap biz">
     <div style="display:flex;flex-direction:column;gap:10px;max-width:640px">
       <span class="tag">Coming 2027</span>
@@ -239,11 +266,12 @@ details p{color:var(--muted);margin-top:10px;max-width:70ch}
   </div>
 </section>
 
-<section class="band" id="quote">
+<section class="band alt" id="quote">
   <div class="wrap" style="max-width:760px">
     <div class="head">
       <h2>Get a quote</h2>
       <p class="lede">Tell us a little and we’ll set up a 20-minute call. No pressure, no payment.</p>
+      <p class="small">No travel fee across the Phoenix metro. Elsewhere in Arizona and out of state, travel is added to your quote.</p>
     </div>
     <form class="form quote" novalidate>
       <label>Name<input name="name" autocomplete="name" required></label>
@@ -252,7 +280,7 @@ details p{color:var(--muted);margin-top:10px;max-width:70ch}
       <label>City<input name="city" autocomplete="address-level2"></label>
       <label>What should it do?
         <select name="need">
-          <option>Smart home and leak alerts</option><option>Photos, files and backups</option><option>Private AI</option><option>Whole home</option><option>Business (2027 list)</option><option>Not sure yet</option>
+          <option>Smart home and leak alerts</option><option>Photos, files and backups</option><option>Movies and music</option><option>Cameras</option><option>Wi-Fi and ad-blocking</option><option>Private AI</option><option>Whole home</option><option>Business (2027 list)</option><option>Not sure yet</option>
         </select>
       </label>
       <label>How do you want to buy?
@@ -279,13 +307,24 @@ details p{color:var(--muted);margin-top:10px;max-width:70ch}
 {
   const P = window.PERSEUS, m = P.money;
   const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const rows = Object.entries(P.presets).map(([id, p]) => {
+  const car = document.getElementById('presets');
+  car.innerHTML = Object.entries(P.presets).map(([id, p]) => {
     const t = P.totals(p.items);
-    const dfy = p.siteVisit ? 'After a site visit' : 'from ' + m(t.dfy);
+    const dfy = p.siteVisit ? 'Site visit' : 'from ' + m(t.dfy);
     const diy = p.siteVisit ? 'Varies' : m(t.low) + '–' + m(t.high);
-    return `<tr><td>${esc(p.who)}</td><td><strong>${esc(p.name)}</strong></td><td class="r num">${diy}</td><td class="r num">${dfy}</td><td class="r"><a href="build/index.html#preset-${id}">Open in builder</a></td></tr>`;
-  });
-  document.querySelector('#presets tbody').innerHTML = rows.join('');
+    return `<article class="pc">
+      <span class="who">${esc(p.who)}</span>
+      <h4>${esc(p.name)}</h4>
+      <p class="blurb">${esc(p.blurb)}</p>
+      <div class="nums"><div><span>Parts if you DIY</span><b>${diy}</b></div><div><span>Done for you</span><b>${dfy}</b></div></div>
+      <ul>${P.highlights(p.items).map(h => `<li>${esc(h)}</li>`).join('')}</ul>
+      <a class="btn ghost" href="build/index.html#preset-${id}">Start from this build</a>
+    </article>`;
+  }).join('');
+  const step = d => car.scrollBy({ left: d * (car.querySelector('.pc').offsetWidth + 16), behavior: 'smooth' });
+  document.getElementById('prev').addEventListener('click', () => step(-1));
+  document.getElementById('next').addEventListener('click', () => step(1));
+  car.addEventListener('keydown', e => { if (e.key === 'ArrowRight') step(1); if (e.key === 'ArrowLeft') step(-1); });
   document.getElementById('dfy-from').textContent = m(P.totals(P.presets.cheapest.items).dfy);
   document.getElementById('cfg-price').textContent = m(P.rules.configureLow) + '–' + m(P.rules.configureHigh);
   document.getElementById('price-note').textContent =

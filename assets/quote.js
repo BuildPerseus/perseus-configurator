@@ -5,7 +5,9 @@
 {
   const QUOTE_ENDPOINT = ''; // e.g. '/api/quote' once the function exists
 
-  for (const form of document.querySelectorAll('form.quote')) {
+  function bindQuote(form) {
+    if (form.dataset.bound) return;
+    form.dataset.bound = '1';
     const status = form.querySelector('[role=status]');
     const say = (msg, ok) => { status.hidden = false; status.textContent = msg; status.classList.toggle('ok', !!ok); };
 
@@ -31,4 +33,7 @@
       }
     });
   }
+
+  window.PERSEUS_bindQuote = bindQuote;
+  document.querySelectorAll('form.quote').forEach(bindQuote);
 }

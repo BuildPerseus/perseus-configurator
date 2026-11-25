@@ -4,32 +4,63 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Build your Perseus</title>
-<meta name="description" content="Pick what you want your home server to do. Get a parts list, a DIY total and a done-for-you price.">
+<meta name="description" content="Pick what you want your home server to do. Get a recommended build, a DIY parts total and a done-for-you price.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
 <style>
-.top{padding:36px max(5vw,16px) 28px;background:radial-gradient(100% 120% at 85% 0%,#16281f 0%,var(--bg) 65%);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;flex-direction:column;gap:22px}
-.q{display:flex;flex-direction:column;gap:10px}
-.q h2{font-size:18px;font-family:var(--f-head)}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font:500 15px var(--f-body);cursor:pointer}
-.chip:hover{border-color:var(--green-hi)}
+body{min-height:100vh;display:flex;flex-direction:column;background:radial-gradient(90% 60% at 80% 0%,#14241b 0%,var(--bg) 60%) fixed}
+main{flex:1}
+.prog{max-width:1000px;margin:0 auto;padding:22px max(5vw,16px) 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.prog div{display:flex;flex-direction:column;gap:8px;font-size:13.5px;color:var(--dim)}
+.prog i{display:block;height:4px;border-radius:4px;background:var(--line);transition:background .3s}
+.prog .on{color:var(--ink)}.prog .on i{background:var(--glow)}
+.stage{max-width:1000px;margin:0 auto;padding:36px max(5vw,16px) 120px}
+.stage h1{font-size:clamp(30px,4.4vw,46px);margin-bottom:8px}
+.stage .lede{margin-bottom:28px}
+.view{animation:in .35s ease}
+@keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.picks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.pk{position:relative;text-align:left;display:flex;flex-direction:column;gap:8px;padding:20px 18px;min-height:150px;border-radius:14px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;cursor:pointer;transition:border-color .15s,background .15s,transform .15s}
+.pk:hover{border-color:var(--green-hi);transform:translateY(-2px)}
+.pk svg{width:34px;height:34px;color:var(--glow)}
+.pk b{font-family:var(--f-head);font-size:18px;font-weight:600;line-height:1.2}
+.pk span{font-size:14px;color:var(--muted);line-height:1.45}
+.pk[aria-pressed=true]{border-color:var(--glow);background:linear-gradient(180deg,rgba(46,107,74,.35),rgba(46,107,74,.12))}
+.pk[aria-pressed=true]::after{content:"✓";position:absolute;top:12px;right:12px;width:26px;height:26px;border-radius:50%;background:var(--glow);color:#0b0f0d;font-weight:700;display:grid;place-items:center;font-size:14px}
+.picks.five{grid-template-columns:repeat(5,minmax(0,1fr))}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(11,15,13,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+.bar .in{max-width:1000px;margin:0 auto;padding:12px max(5vw,16px);display:flex;align-items:center;gap:12px}
+.bar .info{flex:1;font-size:14px;color:var(--muted)}
+.bar .info b{color:var(--ink);font-family:var(--f-head);font-size:18px}
+.reveal{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:24px;align-items:start}
+.rig{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.mod{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--bg);display:flex;flex-direction:column;gap:6px;opacity:0;animation:pop .45s ease forwards}
+.mod svg{width:26px;height:26px;color:var(--glow)}
+.mod b{font-size:14px}.mod span{font-size:12.5px;color:var(--dim);line-height:1.35}
+@keyframes pop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none;box-shadow:0 0 0 1px rgba(95,191,134,.25),0 8px 24px -12px rgba(95,191,134,.5)}}
+@media (prefers-reduced-motion:reduce){.mod{opacity:1}}
+.figs{display:flex;flex-direction:column;gap:10px}
+.fig2{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.fig2 span{color:var(--muted);font-size:14.5px}
+.fig2 b{font-family:var(--f-head);font-size:26px;font-weight:600;white-space:nowrap}
+.fig2.hi{border-color:var(--green)}
+.does{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}
+.does span{font-size:14px;border:1px solid rgba(95,191,134,.35);color:var(--green-ink);border-radius:999px;padding:5px 12px}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.chip{min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font:500 14.5px var(--f-body);cursor:pointer}
 .chip[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#fff}
-.rec{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;background:var(--panel);border:1px solid var(--green);border-radius:var(--r);padding:16px 18px}
-.rec strong{font-family:var(--f-head);font-size:20px}
-.rec p{color:var(--muted);flex:1 1 320px}
-.main{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:28px;align-items:start;padding:28px max(5vw,16px) 64px}
-.list{display:flex;flex-direction:column;gap:10px}
-.listhead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:4px}
-.switch{display:inline-flex;align-items:center;gap:10px;font-size:15px;color:var(--muted);cursor:pointer;min-height:44px;flex-direction:row}
+.custom{margin-top:26px;border:1px solid var(--line);border-radius:14px;background:var(--bg2)}
+.custom summary{cursor:pointer;padding:16px 18px;font-family:var(--f-head);font-size:18px;display:flex;justify-content:space-between;align-items:center;gap:10px;list-style:none;min-height:56px}
+.custom summary::after{content:"+";color:var(--green-ink);font-size:22px}
+.custom[open] summary::after{content:"–"}
+.custom .body{padding:0 18px 18px;display:flex;flex-direction:column;gap:10px}
+.switch{display:inline-flex;flex-direction:row;align-items:center;gap:10px;font-size:15px;color:var(--muted);cursor:pointer;min-height:44px}
 .switch input{width:20px;height:20px;min-height:0;accent-color:var(--green-hi)}
-.row{display:grid;grid-template-columns:120px minmax(0,1fr) auto;gap:6px 14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.row{display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:6px 14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
 .row .grp{font-size:13px;color:var(--dim)}
 .row select{min-height:42px;padding:8px 10px;font-size:15px}
-.row .pname{font-weight:500}
 .row .right{display:flex;align-items:center;gap:10px;justify-content:flex-end}
 .qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px}
 .qty button{width:36px;height:36px;border:0;background:transparent;color:var(--ink);font-size:18px;cursor:pointer;border-radius:999px}
@@ -38,25 +69,16 @@
 .x:hover{color:var(--bad);border-color:var(--bad)}
 .meta{grid-column:2/-1;display:flex;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
 .spec{grid-column:2/-1;font-size:14px;color:var(--dim)}
-.add{display:flex;gap:10px;margin-top:6px}
-.add select{flex:1}
-.warns{display:flex;flex-direction:column;gap:8px;margin-bottom:6px}
-.warn{border-left:0;border:1px solid rgba(226,184,92,.45);background:rgba(226,184,92,.08);color:#f0d9a4;border-radius:10px;padding:10px 14px;font-size:14.5px}
+.add{display:flex;gap:10px}.add select{flex:1}
+.warn{border:1px solid rgba(226,184,92,.45);background:rgba(226,184,92,.08);color:#f0d9a4;border-radius:10px;padding:10px 14px;font-size:14.5px}
 .warn.bad{border-color:rgba(238,138,127,.5);background:rgba(238,138,127,.08);color:#f6c3bc}
 .warn.info{border-color:var(--line);background:var(--panel2);color:var(--muted)}
-.sum{position:sticky;top:84px;display:flex;flex-direction:column;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px}
-.way{display:flex;flex-direction:column;gap:8px;margin:0;padding:0;border:0}
-.way label{flex-direction:row;align-items:center;gap:12px;border:1px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer;color:var(--ink)}
-.way label:has(input:checked){border-color:var(--green-hi);background:rgba(46,107,74,.14)}
-.way input{width:18px;height:18px;min-height:0;accent-color:var(--green-hi);flex:none}
-.way .t{flex:1;display:flex;flex-direction:column;font-size:14px;color:var(--muted)}
-.way .t b{color:var(--ink);font-size:15px;font-weight:600}
-.way .p{font-family:var(--f-head);font-size:17px;white-space:nowrap;text-align:right}
-.big{font-family:var(--f-head);font-size:34px;line-height:1.1}
-.sum .btn{width:100%}
-textarea.copy{font-size:13px;min-height:140px}
-@media (max-width:980px){.main{grid-template-columns:minmax(0,1fr)}.sum{position:static}}
-@media (max-width:560px){.row{grid-template-columns:minmax(0,1fr) auto}.row .grp{grid-column:1/-1}.meta,.spec{grid-column:1/-1}}
+.ways{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:26px}
+.ways .pk{min-height:190px}
+.ways .pk em{font-style:normal;font-family:var(--f-head);font-size:22px;color:var(--ink);margin-top:auto}
+textarea.copy{font-size:13px;min-height:160px}
+@media (max-width:860px){.picks,.picks.five{grid-template-columns:repeat(2,minmax(0,1fr))}.reveal{grid-template-columns:minmax(0,1fr)}.ways{grid-template-columns:minmax(0,1fr)}.ways .pk{min-height:0}}
+@media (max-width:560px){.prog span{display:none}.rig{grid-template-columns:repeat(2,minmax(0,1fr))}.pk{min-height:0;padding:16px 14px}.row{grid-template-columns:minmax(0,1fr) auto}.row .grp,.meta,.spec{grid-column:1/-1}}
 </style>
 </head>
 <body>
@@ -71,94 +93,23 @@ textarea.copy{font-size:13px;min-height:140px}
       <a href="../index.html#outcomes">What it does</a>
       <a href="../index.html#pricing">Pricing</a>
       <a href="../index.html#faq">FAQ</a>
-      <a href="index.html" aria-current="page">Builder</a>
     </nav>
   </div>
 </header>
 
 <main>
-<section class="top">
-  <div class="wrap">
-    <div style="display:flex;flex-direction:column;gap:8px">
-      <h1 style="font-size:clamp(30px,4vw,44px)">Build your Perseus</h1>
-      <p class="lede">Pick what you want it to do. We’ll recommend a build, and you can swap any part.</p>
-    </div>
-    <div class="q">
-      <h2>1. What do you want it to do?</h2>
-      <div class="chips" id="needs"></div>
-    </div>
-    <div class="q">
-      <h2>2. Who is it for?</h2>
-      <div class="chips" id="sits"></div>
-    </div>
-    <div class="rec" id="rec" aria-live="polite"></div>
-    <div class="chips" id="presetTabs" aria-label="Starting builds"></div>
-  </div>
-</section>
-
-<div class="main wrap">
-  <section aria-labelledby="partsTitle">
-    <div class="listhead">
-      <h2 id="partsTitle" style="font-size:24px">Your parts</h2>
-      <label class="switch"><input type="checkbox" id="specs"> Show specs</label>
-    </div>
-    <div class="warns" id="warns" aria-live="polite"></div>
-    <div class="list" id="list"></div>
-    <div class="add">
-      <select id="addSel" aria-label="Add a part"></select>
-      <button class="btn ghost" id="addBtn" type="button">Add</button>
-    </div>
-    <p class="small" style="margin-top:14px" id="priceNote"></p>
-  </section>
-
-  <aside class="sum" aria-label="Your total">
-    <div>
-      <p class="small">Parts total if you buy them</p>
-      <p class="big num" id="diyTotal">$—</p>
-      <p class="small">Before tax and shipping</p>
-    </div>
-    <fieldset class="way" id="way">
-      <legend class="small" style="margin-bottom:6px">How do you want to buy?</legend>
-      <label><input type="radio" name="way" value="diy"><span class="t"><b>Do it yourself</b>Parts list and store links</span><span class="p">Free</span></label>
-      <label><input type="radio" name="way" value="configure"><span class="t"><b>You buy, we set it up</b>Remote or one visit, 30 days support</span><span class="p num" id="cfgP"></span></label>
-      <label><input type="radio" name="way" value="dfy" checked><span class="t"><b>Done for you</b><span id="dfyNote">Parts, install and 3 months of Care</span></span><span class="p num" id="dfyP"></span></label>
-    </fieldset>
-    <div id="cta" class="btns"></div>
-    <p class="note" id="copyMsg" role="status" hidden></p>
-    <textarea class="copy" id="copyBox" aria-label="Parts list to copy" hidden readonly></textarea>
-    <button class="btn ghost" type="button" disabled title="Deposits open after your quote call">Pay deposit (opens soon)</button>
-    <p class="small">We confirm every quote on a 20-minute call first. Deposits are 100% refundable until parts are ordered.</p>
-  </aside>
-</div>
-
-<section class="band alt" id="quote">
-  <div class="wrap" style="max-width:760px">
-    <div class="head">
-      <h2>Request a quote for this build</h2>
-      <p class="lede">Your parts list comes along with the request. We’ll set up a 20-minute call.</p>
-    </div>
-    <form class="form quote" novalidate>
-      <label>Name<input name="name" autocomplete="name" required></label>
-      <label>Email<input name="email" type="email" autocomplete="email" required></label>
-      <label>Phone (optional)<input name="phone" type="tel" autocomplete="tel"></label>
-      <label>City<input name="city" autocomplete="address-level2"></label>
-      <label class="full">Anything else?<textarea name="notes"></textarea></label>
-      <div class="full btns"><button class="btn primary" type="submit">Request my quote</button></div>
-      <p class="note full" role="status" hidden></p>
-    </form>
-  </div>
-</section>
+  <div class="prog" id="prog" aria-label="Progress"></div>
+  <div class="stage"><div id="view"></div></div>
 </main>
 
-<footer>
-  <div class="wrap">
-    <p>© 2026 Perseus Lab · Mesa, Arizona</p>
-    <p style="max-width:60ch">Store links are plain links today. If any become affiliate links, we’ll say so right next to them. Prices are estimates and are re-checked within 7 days of any quote.</p>
-  </div>
-</footer>
+<div class="bar"><div class="in">
+  <button class="btn ghost" type="button" id="back">Back</button>
+  <p class="info" id="barInfo" aria-live="polite"></p>
+  <button class="btn primary" type="button" id="next">Next</button>
+</div></div>
 
 <script src="../assets/catalog.js"></script>
-<script src="../assets/build.js"></script>
 <script src="../assets/quote.js"></script>
+<script src="../assets/build.js"></script>
 </body>
 </html>
