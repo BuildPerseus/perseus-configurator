@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perseus Lab Home</title>
+<meta name="description" content="Private home servers, set up for you. Smart home, photos, backups and private AI on a quiet box you own. Phoenix metro and beyond.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.hero{padding:clamp(40px,6vw,80px) max(5vw,16px) clamp(48px,6vw,88px);background:radial-gradient(120% 90% at 80% 10%,#16281f 0%,var(--bg) 60%)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.hero-copy{display:flex;flex-direction:column;gap:22px}
+.hero svg.house{width:100%;height:auto;display:block}
+.flow{stroke-dasharray:5 7;animation:flow 2.4s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-24}}
+.price{font-family:var(--f-head);font-size:28px;color:var(--ink)}
+.steps{counter-reset:s;display:grid;gap:16px;grid-template-columns:repeat(5,minmax(0,1fr))}
+.steps li{list-style:none;counter-increment:s;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:8px}
+.steps li::before{content:counter(s);font-family:var(--f-head);font-size:15px;color:var(--bg);background:var(--green-ink);width:28px;height:28px;border-radius:50%;display:grid;place-items:center}
+.steps p{color:var(--muted);font-size:15px}
+.std{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr));padding:0;margin:0}
+.std li{list-style:none;display:flex;gap:12px;align-items:flex-start;color:var(--muted)}
+.std svg{flex:none;width:20px;height:20px;margin-top:3px;color:var(--glow)}
+.own{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,5vw,64px);align-items:start}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+details summary{cursor:pointer;font-family:var(--f-head);font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px;min-height:28px}
+details summary::after{content:"+";color:var(--green-ink);font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin-top:10px;max-width:70ch}
+.biz{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+@media (max-width:1000px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){.hero .wrap,.own{grid-template-columns:minmax(0,1fr)}.std{grid-template-columns:minmax(0,1fr)}.steps{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Perseus Lab home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="#8fd0a8" stroke-width="1.5"><path d="M7 25 13 17 19 19 25 7M13 17 11 8"/></g><g fill="#e6eee8"><circle cx="7" cy="25" r="2"/><circle cx="13" cy="17" r="2.4"/><circle cx="19" cy="19" r="1.8"/><circle cx="25" cy="7" r="2.2"/><circle cx="11" cy="8" r="1.6"/></g></svg>
+      Perseus Lab
+    </a>
+    <nav aria-label="Main">
+      <a href="#outcomes">What it does</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn primary" href="build/index.html">Build yours</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <h1>A private home server, set up for you.</h1>
+      <p class="lede">Leak alerts, smart lights, your family’s photos, tested backups, even private AI, all on a quiet box you own. Tell us what you want it to do. We pick the parts, set it up and hand you the keys.</p>
+      <div class="btns">
+        <a class="btn primary" href="build/index.html">Build yours in 2 minutes</a>
+        <a class="btn ghost" href="#quote">Get a quote</a>
+      </div>
+      <p class="small">No travel fee across the Phoenix metro. The rest of Arizona and out of state available.</p>
+    </div>
+
+    <svg class="house" viewBox="0 0 600 440" role="img" aria-label="A house cut open at night. A small server in the hall closet connects to lights, photos, a leak sensor and a voice assistant.">
+      <defs>
+        <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#5fbf86" stop-opacity=".55"/><stop offset="1" stop-color="#5fbf86" stop-opacity="0"/></radialGradient>
+        <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16211b"/><stop offset="1" stop-color="#101813"/></linearGradient>
+        <linearGradient id="roof" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d2b23"/><stop offset="1" stop-color="#141e18"/></linearGradient>
+      </defs>
+      <g fill="#e6eee8" opacity=".55"><circle cx="40" cy="40" r="1.2"/><circle cx="110" cy="70" r="1"/><circle cx="520" cy="44" r="1.4"/><circle cx="560" cy="120" r="1"/><circle cx="470" cy="90" r="1"/><circle cx="70" cy="140" r="1"/><circle cx="380" cy="30" r="1.1"/></g>
+      <!-- ground and shadow -->
+      <ellipse cx="300" cy="408" rx="270" ry="14" fill="#060908"/>
+      <line x1="20" y1="402" x2="580" y2="402" stroke="#24332b" stroke-width="2"/>
+      <!-- house -->
+      <polygon points="66,202 300,70 534,202" fill="url(#roof)" stroke="#2c3e34" stroke-width="2"/>
+      <rect x="90" y="196" width="420" height="206" fill="url(#wall)" stroke="#2c3e34" stroke-width="2"/>
+      <line x1="90" y1="298" x2="510" y2="298" stroke="#2c3e34" stroke-width="3"/>
+      <line x1="270" y1="196" x2="270" y2="298" stroke="#24332b" stroke-width="2"/>
+      <line x1="190" y1="298" x2="190" y2="402" stroke="#24332b" stroke-width="2"/>
+      <!-- warm window light -->
+      <rect x="110" y="214" width="140" height="66" rx="3" fill="#1f2c22" opacity=".9"/>
+      <rect x="290" y="214" width="200" height="66" rx="3" fill="#1b2620" opacity=".9"/>
+      <!-- closet + server -->
+      <rect x="104" y="318" width="72" height="84" fill="#0c120f" stroke="#2c3e34"/>
+      <circle cx="140" cy="372" r="44" fill="url(#glow)"/>
+      <rect x="118" y="358" width="44" height="30" rx="5" fill="#1a2a21" stroke="#5fbf86" stroke-width="1.5"/>
+      <circle cx="128" cy="373" r="2.4" fill="#8fd0a8"/>
+      <line x1="136" y1="373" x2="154" y2="373" stroke="#3c8660" stroke-width="2"/>
+      <!-- connections -->
+      <g fill="none" stroke="#5fbf86" stroke-width="1.6" opacity=".75">
+        <path class="flow" d="M140 358 C140 320 170 300 180 262"/>
+        <path class="flow" d="M150 358 C200 320 330 300 380 262"/>
+        <path class="flow" d="M162 380 C230 380 300 370 330 360"/>
+        <path class="flow" d="M162 388 C280 398 400 392 450 378"/>
+      </g>
+      <!-- bulb -->
+      <g transform="translate(180 244)"><circle r="20" fill="url(#glow)"/><path d="M0 -12a8 8 0 0 1 5 14v4h-10v-4a8 8 0 0 1 5-14z" fill="#e2d38f" stroke="#e6eee8" stroke-width="1"/><rect x="-4" y="7" width="8" height="3" fill="#a3b5aa"/></g>
+      <!-- photos -->
+      <g transform="translate(380 244)"><rect x="-18" y="-14" width="36" height="28" rx="3" fill="#18221d" stroke="#e6eee8" stroke-width="1.5"/><path d="M-12 8 -3 -1 4 5 8 1 13 8z" fill="#8fd0a8"/><circle cx="7" cy="-5" r="3" fill="#e2d38f"/></g>
+      <!-- voice / AI -->
+      <g transform="translate(340 352)"><rect x="-17" y="-14" width="34" height="24" rx="8" fill="#18221d" stroke="#e6eee8" stroke-width="1.5"/><path d="M-6 10 -10 18 2 10z" fill="#18221d" stroke="#e6eee8" stroke-width="1.5" stroke-linejoin="round"/><g fill="#8fd0a8"><circle cx="-7" cy="-2" r="2"/><circle cx="0" cy="-2" r="2"/><circle cx="7" cy="-2" r="2"/></g></g>
+      <!-- leak -->
+      <g transform="translate(460 370)"><path d="M0 -16C6 -6 11 0 11 6a11 11 0 0 1-22 0c0-6 5-12 11-22z" fill="#5a9bd5" stroke="#e6eee8" stroke-width="1.2"/></g>
+      <!-- labels -->
+      <g font-family="Inter,system-ui,sans-serif" font-size="13" fill="#a3b5aa">
+        <text x="180" y="290" text-anchor="middle">Lights</text>
+        <text x="380" y="290" text-anchor="middle">Photos and files</text>
+        <text x="340" y="392" text-anchor="middle">Private AI</text>
+        <text x="460" y="396" text-anchor="middle">Leak alert</text>
+        <text x="140" y="337" text-anchor="middle" fill="#8fd0a8">Your server</text>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section class="band" id="outcomes">
+  <div class="wrap">
+    <div class="head">
+      <h2>Start with what you want it to do.</h2>
+      <p class="lede">You don’t need to know what RAM or a NAS is. Pick the outcome and the builder chooses parts that fit, without anything you won’t use.</p>
+    </div>
+    <div class="grid g4">
+      <a class="card" href="build/index.html#need-smart" style="text-decoration:none">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3c3 4.5 6 7.6 6 11a6 6 0 0 1-12 0c0-3.4 3-6.5 6-11z"/></svg>
+        <h3 style="color:var(--ink)">Catch leaks early, lights that follow you</h3>
+        <p>Sensors under sinks and the water heater text your phone. Lights run on schedules and motion.</p>
+      </a>
+      <a class="card" href="build/index.html#need-photos" style="text-decoration:none">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 16 5-5 4 4 3-3 6 6"/></svg>
+        <h3 style="color:var(--ink)">Keep the family photos at home</h3>
+        <p>Photos and files on mirrored drives in your house, with phone backup that runs on its own.</p>
+      </a>
+      <a class="card" href="build/index.html#need-backup" style="text-decoration:none">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16v4H4zM4 13h16v4H4z"/><path d="M8 9h.01M8 15h.01"/></svg>
+        <h3 style="color:var(--ink)">Backups you’ve actually tested</h3>
+        <p>Three copies, two kinds of storage, one off site. We restore a file with you at handover to prove it works.</p>
+      </a>
+      <a class="card" href="build/index.html#need-ai" style="text-decoration:none">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9zM9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>
+        <h3 style="color:var(--ink)">Private AI in your house</h3>
+        <p>A calendar-aware assistant and local AI models on your own box. They’re useful, but they don’t match Claude or ChatGPT, so you can still send big jobs there when you choose.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="pricing">
+  <div class="wrap">
+    <div class="head">
+      <h2>Three ways to work with us.</h2>
+      <p class="lede">Same parts list either way. You decide how much of the work you want to do.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card">
+        <span class="tag">Do it yourself</span>
+        <p class="price">Free</p>
+        <p>Use the builder, get the exact parts list with store links and a parts total. Buy and set it up yourself.</p>
+      </div>
+      <div class="card">
+        <span class="tag">You buy, we set it up</span>
+        <p class="price"><span class="num" id="cfg-price">$500–750</span></p>
+        <p>Buy the parts from our list. We configure it remotely or in one visit of up to 3 hours, then support you for 30 days.</p>
+      </div>
+      <div class="card" style="border-color:var(--green)">
+        <span class="tag">Done for you</span>
+        <p class="price">From <span class="num" id="dfy-from">$—</span></p>
+        <p>We plan it, source the parts, install it with a licensed partner and hand over a guide. Your first 3 months of Care are included.</p>
+      </div>
+    </div>
+    <p class="small" style="margin-top:14px">Prebuilt and shipped: coming later.</p>
+
+    <h3 style="margin:48px 0 16px">Starting points</h3>
+    <table class="stack" id="presets">
+      <thead><tr><th>Who it’s for</th><th>Build</th><th class="r">Parts if you DIY</th><th class="r">Done for you</th><th></th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <p class="small" style="margin-top:14px" id="price-note"></p>
+  </div>
+</section>
+
+<section class="band" id="standards">
+  <div class="wrap own">
+    <div class="head" style="margin:0">
+      <h2>Own it. Don’t expect it to pay for itself.</h2>
+      <p class="lede">A home server costs more than the subscriptions it replaces. People buy one to own their photos and data, keep their home private, and have things just work. That’s what we sell.</p>
+    </div>
+    <ul class="std">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg>Quiet mini PCs, never loud rack gear</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg>Mirrored NAS drives and 3-2-1 backups, with a restore tested at handover</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg>Battery backup that shuts the server down safely in an outage</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg>No ports opened to the internet. Remote access runs over an encrypted private network</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg>Your internet keeps working even if the server is off</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg>Updates in planned maintenance windows, tested first on our own setup</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg>Wiring and mounting by a licensed partner</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg>A written handover guide for every install</li>
+    </ul>
+  </div>
+</section>
+
+<section class="band alt" id="how">
+  <div class="wrap">
+    <div class="head"><h2>How it works</h2></div>
+    <ol class="steps" style="padding:0;margin:0">
+      <li><h3>Build it</h3><p>Two minutes in the builder. You get a parts list and a price range.</p></li>
+      <li><h3>20-minute call</h3><p>We confirm what you need and send a firm quote. Whole-home work gets a site visit.</p></li>
+      <li><h3>Deposit</h3><p>Parts plus half the setup. Fully refundable until parts are ordered.</p></li>
+      <li><h3>Install day</h3><p>We set it up, test a backup restore with you and walk you through the guide.</p></li>
+      <li><h3>Care</h3><p>3 months included. After that, Care plans start at $150 a month, or run it yourself.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" id="faq">
+  <div class="wrap" style="max-width:860px">
+    <div class="head"><h2>Questions</h2></div>
+    <details><summary>Do I need to be technical?</summary><p>No. You use it through apps and a wall dashboard. We handle the setup, and Care covers updates and fixes.</p></details>
+    <details><summary>Is it secure?</summary><p>We open no ports to the internet, use an encrypted private network for remote access, keep backups, and update in planned windows. No system is unhackable. We keep yours simple, current and backed up.</p></details>
+    <details><summary>Where do you install?</summary><p>No travel fee across the Phoenix metro. Elsewhere in Arizona it’s $150 under a 2-hour drive and $300 beyond. Out of state we charge travel at cost plus $500 per travel day, once we’ve confirmed that state’s licensing.</p></details>
+    <details><summary>Who does the wiring?</summary><p>A licensed low-voltage partner handles any wiring and mounting and bills you for that part directly.</p></details>
+    <details><summary>What if I change my mind?</summary><p>Your deposit is 100% refundable until parts are ordered. After that, the setup portion is refunded and parts go back under each store’s return policy, minus any restocking fees.</p></details>
+    <details><summary>Can I just buy the parts myself?</summary><p>Yes. The builder is free and shows the full parts list with store links. Bring us in later if you get stuck.</p></details>
+    <details><summary>Will it save me money on subscriptions?</summary><p>Usually not overall. It can replace some cloud storage and app subscriptions, but the hardware and setup cost more. Buy it for ownership and privacy, not savings.</p></details>
+  </div>
+</section>
+
+<section class="band alt">
+  <div class="wrap biz">
+    <div style="display:flex;flex-direction:column;gap:10px;max-width:640px">
+      <span class="tag">Coming 2027</span>
+      <h2>Perseus Lab Business</h2>
+      <p class="lede">An on-site server with AI agents and an owner dashboard, starting with property management companies. Agents draft, people approve.</p>
+    </div>
+    <a class="btn ghost" href="#quote">Get on the list</a>
+  </div>
+</section>
+
+<section class="band" id="quote">
+  <div class="wrap" style="max-width:760px">
+    <div class="head">
+      <h2>Get a quote</h2>
+      <p class="lede">Tell us a little and we’ll set up a 20-minute call. No pressure, no payment.</p>
+    </div>
+    <form class="form quote" novalidate>
+      <label>Name<input name="name" autocomplete="name" required></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required></label>
+      <label>Phone (optional)<input name="phone" type="tel" autocomplete="tel"></label>
+      <label>City<input name="city" autocomplete="address-level2"></label>
+      <label>What should it do?
+        <select name="need">
+          <option>Smart home and leak alerts</option><option>Photos, files and backups</option><option>Private AI</option><option>Whole home</option><option>Business (2027 list)</option><option>Not sure yet</option>
+        </select>
+      </label>
+      <label>How do you want to buy?
+        <select name="path"><option>Done for you</option><option>I buy, you set it up</option><option>Just the parts list</option></select>
+      </label>
+      <label class="full">Anything else?<textarea name="notes"></textarea></label>
+      <div class="full btns"><button class="btn primary" type="submit">Request my quote</button></div>
+      <p class="note full" role="status" hidden></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Perseus Lab · Mesa, Arizona</p>
+    <p style="max-width:60ch">Prices are estimates before tax and shipping, re-checked within 7 days of any quote. Store links are plain links today. If any become affiliate links, we’ll say so right next to them.</p>
+  </div>
+</footer>
+
+<script src="assets/catalog.js"></script>
+<script src="assets/quote.js"></script>
+<script>
+{
+  const P = window.PERSEUS, m = P.money;
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const rows = Object.entries(P.presets).map(([id, p]) => {
+    const t = P.totals(p.items);
+    const dfy = p.siteVisit ? 'After a site visit' : 'from ' + m(t.dfy);
+    const diy = p.siteVisit ? 'Varies' : m(t.low) + '–' + m(t.high);
+    return `<tr><td>${esc(p.who)}</td><td><strong>${esc(p.name)}</strong></td><td class="r num">${diy}</td><td class="r num">${dfy}</td><td class="r"><a href="build/index.html#preset-${id}">Open in builder</a></td></tr>`;
+  });
+  document.querySelector('#presets tbody').innerHTML = rows.join('');
+  document.getElementById('dfy-from').textContent = m(P.totals(P.presets.cheapest.items).dfy);
+  document.getElementById('cfg-price').textContent = m(P.rules.configureLow) + '–' + m(P.rules.configureHigh);
+  document.getElementById('price-note').textContent =
+    `Parts prices from our ${P.rules.priceDate} price check, before tax and shipping. Done for you = parts + 15% sourcing + setup (from ${m(P.rules.setupMin)}, or ${m(P.rules.setupBigAI)} with a large AI box). Firm prices after a 20-minute call.`;
+}
+</script>
+</body>
+</html>
