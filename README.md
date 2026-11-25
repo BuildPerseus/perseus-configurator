@@ -8,7 +8,8 @@ Plain HTML, CSS and JavaScript with no build step. Hosted on Cloudflare Pages at
 | Path | What it is |
 |---|---|
 | `index.html` | Home page (short) |
-| `what-it-does/index.html` | Every use case and benefit, by category |
+| `homes/index.html` | For homes: every use case and benefit, by category |
+| `business/index.html` | For business: coming-2027 page with a sign-up list |
 | `pricing/index.html` | Three ways to buy, starting points, how pricing works |
 | `how-it-works/index.html` | Steps, install standards, FAQ |
 | `quote/index.html` | Quote request form |
