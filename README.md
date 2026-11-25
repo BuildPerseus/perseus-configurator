@@ -46,6 +46,7 @@ Done-for-you prices are calculated as parts (low end) + 15% sourcing + setup ($1
 
 ## Not done yet
 
-- Forms: need a Cloudflare Pages Function at `/api/quote` that emails the lead, then set `QUOTE_ENDPOINT` in `assets/quote.js`. Business forms send a hidden `type` (`quick-start` or `business-waitlist`); no `type` means a home quote.
+- Forms: backend is Formspree (free). Create one form in Formspree, then paste its address into `QUOTE_ENDPOINT` in `assets/quote.js`. Every submission carries `type` (`home-quote`, `quick-start`, `business-waitlist`) and a matching email subject.
+- Booking: Cal.com (free), one "20-minute call" event. Paste its link into `BOOKING_URL` in `assets/site.js`; every "Book a 20-minute call" button then opens it, with the form as fallback. Business forms send a hidden `type` (`quick-start` or `business-waitlist`); no `type` means a home quote.
 - `/privacy` and `/terms` are drafts. Set `LEGAL_PAGES_APPROVED = true` in `assets/quote.js` only after Logan approves both. Until then no form sends anything.
 - Photos from real installs.
