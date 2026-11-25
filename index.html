@@ -16,7 +16,6 @@
 .hero svg.house{width:100%;height:auto;display:block}
 .flow{stroke-dasharray:5 7;animation:flow 2.4s linear infinite}
 @keyframes flow{to{stroke-dashoffset:-24}}
-.biz{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .cta{text-align:center}.cta .wrap{display:flex;flex-direction:column;align-items:center;gap:18px}
 @media (max-width:760px){.hero .wrap{grid-template-columns:minmax(0,1fr)}}
 </style>
@@ -104,6 +103,10 @@
     </svg>
   </div>
 </section>
+
+<aside class="bizstrip" aria-label="For business">
+  <div class="wrap"><span>Run a business? We set up AI for your team in about a week.</span><a href="business/index.html">See the AI Quick Start →</a></div>
+</aside>
 
 <section class="band" id="outcomes">
   <div class="wrap">
@@ -204,14 +207,28 @@
   </div>
 </section>
 
-<section class="band alt">
-  <div class="wrap biz">
-    <div style="display:flex;flex-direction:column;gap:10px;max-width:640px">
-      <span class="tag">Coming 2027</span>
-      <h2>Perseus Lab Business</h2>
-      <p class="lede">An on-site server with AI agents and an owner dashboard, starting with property management companies. Agents draft, people approve.</p>
+<section class="band bizband" id="business">
+  <div class="wrap">
+    <div class="head"><h2>Perseus Lab for business</h2></div>
+    <div class="grid g2">
+      <div class="card">
+        <span class="tag">AI Quick Start</span>
+        <h3>Your own Claude or Grok, set up for your team.</h3>
+        <ul class="ticks">
+          <li>3–5 assistants built around your work</li>
+          <li>60-minute team training</li>
+          <li>30 days of support</li>
+        </ul>
+        <p><b style="color:var(--ink)">$750 founding price</b> for the first 3 clients (normally $1,500).</p>
+        <a class="btn primary" href="business/index.html#book">Book a 20-minute call</a>
+      </div>
+      <div class="card">
+        <span class="tag">Coming early 2027</span>
+        <h3>On-site AI servers + agents.</h3>
+        <p>A server your business owns, agents that draft while a person approves, and a dashboard for the owner.</p>
+        <a class="btn ghost" href="business/index.html#waitlist">Join the waitlist</a>
+      </div>
     </div>
-    <a class="btn ghost" href="business/index.html">Learn more</a>
   </div>
 </section>
 
@@ -227,8 +244,8 @@
 <footer>
   <div class="wrap">
     <div style="display:flex;flex-direction:column;gap:12px">
-      <p>© 2026 Perseus Lab · Mesa, Arizona</p>
-      <nav class="foot-links" aria-label="Footer"><a href="build/index.html">Builder</a><a href="homes/index.html">For homes</a><a href="business/index.html">For business</a><a href="pricing/index.html">Pricing</a><a href="how-it-works/index.html">How it works</a><a href="quote/index.html">Get a quote</a></nav>
+      <p>© 2026 Perseus Lab™ · Mesa, Arizona</p>
+      <nav class="foot-links" aria-label="Footer"><a href="build/index.html">Builder</a><a href="homes/index.html">For homes</a><a href="business/index.html">For business</a><a href="pricing/index.html">Pricing</a><a href="how-it-works/index.html">How it works</a><a href="quote/index.html">Get a quote</a><a href="privacy/index.html">Privacy</a><a href="terms/index.html">Terms</a></nav>
     </div>
     <p style="max-width:60ch">Prices are estimates before tax and shipping, re-checked within 7 days of any quote. Store links are plain links today. If any become affiliate links, we’ll say so right next to them.</p>
   </div>
